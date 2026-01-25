@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2graphique.TP2Controller">
+   <children>
+      <HBox prefHeight="108.0" prefWidth="807.0" style="-fx-background-color: purple;">
+         <children>
+            <Label alignment="TOP_CENTER" prefHeight="105.0" prefWidth="738.0" text="TP2 : Les Controles Graphiques" textFill="WHITE">
+               <font>
+                  <Font name="Javanese Text" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="14.0" layoutY="103.0" prefHeight="19.0" prefWidth="70.0" text="Exercice 1">
+         <font>
+            <Font name="Javanese Text" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtExo1" layoutX="14.0" layoutY="140.0" />
+      <Button fx:id="btnCopier" layoutX="14.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#btnCopierOnClicked" prefHeight="25.0" prefWidth="149.0" text="Copier" />
+      <TextField fx:id="txt2Exo1" layoutX="14.0" layoutY="213.0" />
+      <Label layoutX="218.0" layoutY="109.0" prefHeight="19.0" prefWidth="70.0" text="Exercice 2">
+         <font>
+            <Font name="Javanese Text" size="13.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cboExo2" layoutX="218.0" layoutY="140.0" onAction="#cboExo2OnAction" prefWidth="150.0" />
+      <TextField fx:id="txtExo2" layoutX="219.0" layoutY="175.0" />
+      <Label layoutX="534.0" layoutY="109.0" prefHeight="19.0" prefWidth="70.0" text="Exercice 3">
+         <font>
+            <Font name="Javanese Text" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbSio1" layoutX="546.0" layoutY="171.0" mnemonicParsing="false" onMouseClicked="#rbSio1OnClicked" text="SIO1">
+         <font>
+            <Font name="Javanese Text" size="12.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rbSio2" layoutX="545.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#rbSio2OnClicked" text="SIO2">
+         <font>
+            <Font name="Javanese Text" size="12.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="545.0" layoutY="144.0" text="Quelle Classe ?" />
+      <Label layoutX="25.0" layoutY="272.0" prefHeight="19.0" prefWidth="70.0" text="Exercice 4">
+         <font>
+            <Font name="Javanese Text" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="309.0" text="Quelle Style de musique ?" />
+      <CheckBox fx:id="chkRap" layoutX="24.0" layoutY="338.0" mnemonicParsing="false" text="Rap">
+         <font>
+            <Font name="Javanese Text" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chkRock" layoutX="24.0" layoutY="371.0" mnemonicParsing="false" text="Rock">
+         <font>
+            <Font name="Javanese Text" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chkClassique" layoutX="24.0" layoutY="404.0" mnemonicParsing="false" text="Classique">
+         <font>
+            <Font name="Javanese Text" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chkRnb" layoutX="24.0" layoutY="437.0" mnemonicParsing="false" text="RnB">
+         <font>
+            <Font name="Javanese Text" size="12.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="btnExo4" layoutX="21.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#btnExo4OnClicked" prefHeight="25.0" prefWidth="149.0" text="Exercice 4" />
+   </children>
+</AnchorPane>
