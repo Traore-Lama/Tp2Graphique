@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import java.awt.*;
+import javafx.scene.shape.Rectangle;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -39,6 +39,16 @@ public class TP2Controller implements Initializable {
     private CheckBox chkClassique;
     @FXML
     private Button btnExo4;
+    @FXML
+    private DatePicker dpExo5;
+    @FXML
+    private TextField txtExo5;
+    @FXML
+    private Slider sldExo5;
+    @FXML
+    private Rectangle rectangle;
+    @FXML
+    private ColorPicker cpExo6;
 
 
     @Override
@@ -48,6 +58,7 @@ public class TP2Controller implements Initializable {
         ToggleGroup toggleGroup = new ToggleGroup();
         rbSio1.setToggleGroup(toggleGroup);
         rbSio2.setToggleGroup(toggleGroup);
+
     }
 
     @FXML
@@ -93,27 +104,51 @@ public class TP2Controller implements Initializable {
     @FXML
     public void btnExo4OnClicked(Event event)
     {
-        if (chkRap.isSelected() || chkRock.isSelected() || chkRnb.isSelected() || chkClassique.isSelected())
+        String result = "";
+
+        if (chkRap.isSelected())
         {
-            chkRap.setSelected(true);
-            chkRock.setSelected(true);
-            chkRnb.setSelected(true);
-            chkClassique.setSelected(true);
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Bonne Saisie");
-            alert.setContentText("Vos Style de Musique sont : " + chkRnb.isSelected() +  " " + chkRap.isSelected() + " " + chkClassique.isSelected() + " " + chkRnb.isSelected());
-            alert.show();
+            result += ("Rap - ");
         }
-        else
+        if (chkRock.isSelected())
         {
-            chkRap.setSelected(false);
-            chkRock.setSelected(false);
-            chkRnb.setSelected(false);
-            chkClassique.setSelected(false);
+            result += ("Rock - ");
+        }
+        if (chkClassique.isSelected())
+        {
+            result += ("Classique - ");
+        }
+        if (chkRnb.isSelected())
+        {
+            result += ("RnB - ");
+        }
+
+        if (result.length() == 0)
+        {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur de Saisie");
-            alert.setContentText("Veuillez choisir un Style de Musique");
-            alert.show();
+            alert.setTitle("Erreur de saisie");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez choisir un style de musique");
+            alert.showAndWait();
+        } else
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Résultat");
+            alert.setHeaderText(null);
+            alert.setContentText("Vos goûts musicaux sont : " + result);
+            alert.showAndWait();
         }
+    }
+
+    @FXML
+    public void dpExo5OnAction(ActionEvent actionEvent)
+    {
+        txtExo5.setText(dpExo5.getValue().toString());
+    }
+
+    @FXML
+    public void cpExo6OnAction(ActionEvent actionEvent)
+    {
+
     }
 }

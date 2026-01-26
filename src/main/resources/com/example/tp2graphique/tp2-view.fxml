@@ -2,14 +2,19 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2graphique.TP2Controller">
    <children>
@@ -22,63 +27,103 @@
             </Label>
          </children>
       </HBox>
-      <Label layoutX="14.0" layoutY="103.0" prefHeight="19.0" prefWidth="70.0" text="Exercice 1">
-         <font>
-            <Font name="Javanese Text" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtExo1" layoutX="14.0" layoutY="140.0" />
-      <Button fx:id="btnCopier" layoutX="14.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#btnCopierOnClicked" prefHeight="25.0" prefWidth="149.0" text="Copier" />
-      <TextField fx:id="txt2Exo1" layoutX="14.0" layoutY="213.0" />
-      <Label layoutX="218.0" layoutY="109.0" prefHeight="19.0" prefWidth="70.0" text="Exercice 2">
-         <font>
-            <Font name="Javanese Text" size="13.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="cboExo2" layoutX="218.0" layoutY="140.0" onAction="#cboExo2OnAction" prefWidth="150.0" />
-      <TextField fx:id="txtExo2" layoutX="219.0" layoutY="175.0" />
-      <Label layoutX="534.0" layoutY="109.0" prefHeight="19.0" prefWidth="70.0" text="Exercice 3">
-         <font>
-            <Font name="Javanese Text" size="13.0" />
-         </font>
-      </Label>
-      <RadioButton fx:id="rbSio1" layoutX="546.0" layoutY="171.0" mnemonicParsing="false" onMouseClicked="#rbSio1OnClicked" text="SIO1">
-         <font>
-            <Font name="Javanese Text" size="12.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="rbSio2" layoutX="545.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#rbSio2OnClicked" text="SIO2">
-         <font>
-            <Font name="Javanese Text" size="12.0" />
-         </font>
-      </RadioButton>
-      <Label layoutX="545.0" layoutY="144.0" text="Quelle Classe ?" />
-      <Label layoutX="25.0" layoutY="272.0" prefHeight="19.0" prefWidth="70.0" text="Exercice 4">
-         <font>
-            <Font name="Javanese Text" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="36.0" layoutY="309.0" text="Quelle Style de musique ?" />
-      <CheckBox fx:id="chkRap" layoutX="24.0" layoutY="338.0" mnemonicParsing="false" text="Rap">
-         <font>
-            <Font name="Javanese Text" size="12.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="chkRock" layoutX="24.0" layoutY="371.0" mnemonicParsing="false" text="Rock">
-         <font>
-            <Font name="Javanese Text" size="12.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="chkClassique" layoutX="24.0" layoutY="404.0" mnemonicParsing="false" text="Classique">
-         <font>
-            <Font name="Javanese Text" size="12.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="chkRnb" layoutX="24.0" layoutY="437.0" mnemonicParsing="false" text="RnB">
-         <font>
-            <Font name="Javanese Text" size="12.0" />
-         </font>
-      </CheckBox>
-      <Button fx:id="btnExo4" layoutX="21.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#btnExo4OnClicked" prefHeight="25.0" prefWidth="149.0" text="Exercice 4" />
+      <VBox layoutX="45.0" layoutY="125.0" prefHeight="201.0" prefWidth="160.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="70.0" text="Exercice 1">
+               <font>
+                  <Font name="Javanese Text" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtExo1" />
+            <Button fx:id="btnCopier" mnemonicParsing="false" onMouseClicked="#btnCopierOnClicked" prefHeight="26.0" prefWidth="162.0" text="Copier" />
+            <TextField fx:id="txt2Exo1" />
+         </children>
+      </VBox>
+      <VBox layoutX="313.0" layoutY="125.0" prefHeight="201.0" prefWidth="160.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="70.0" text="Exercice 2">
+               <font>
+                  <Font name="Javanese Text" size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cboExo2" onAction="#cboExo2OnAction" prefHeight="27.0" prefWidth="160.0" />
+            <TextField fx:id="txtExo2" />
+         </children>
+      </VBox>
+      <VBox layoutX="604.0" layoutY="125.0" prefHeight="201.0" prefWidth="160.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="70.0" text="Exercice 3">
+               <font>
+                  <Font name="Javanese Text" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_RIGHT" prefHeight="11.0" prefWidth="103.0" text="Quelle Classe ?" />
+            <RadioButton fx:id="rbSio1" mnemonicParsing="false" onMouseClicked="#rbSio1OnClicked" text="SIO1">
+               <font>
+                  <Font name="Javanese Text" size="12.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="rbSio2" mnemonicParsing="false" onMouseClicked="#rbSio2OnClicked" text="SIO2">
+               <font>
+                  <Font name="Javanese Text" size="12.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </VBox>
+      <VBox layoutX="45.0" layoutY="303.0" prefHeight="208.0" prefWidth="174.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="70.0" text="Exercice 4">
+               <font>
+                  <Font name="Javanese Text" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_RIGHT" text="Quelle Style de musique ?" />
+            <CheckBox fx:id="chkRap" mnemonicParsing="false" text="Rap">
+               <font>
+                  <Font name="Javanese Text" size="12.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="chkRock" mnemonicParsing="false" text="Rock">
+               <font>
+                  <Font name="Javanese Text" size="12.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="chkClassique" mnemonicParsing="false" text="Classique">
+               <font>
+                  <Font name="Javanese Text" size="12.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="chkRnb" mnemonicParsing="false" text="RnB">
+               <font>
+                  <Font name="Javanese Text" size="12.0" />
+               </font>
+            </CheckBox>
+            <Button fx:id="btnExo4" mnemonicParsing="false" onMouseClicked="#btnExo4OnClicked" prefHeight="24.0" prefWidth="174.0" text="Exercice 4" />
+         </children>
+      </VBox>
+      <VBox layoutX="324.0" layoutY="326.0" prefHeight="187.0" prefWidth="160.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="70.0" text="Exercice 5">
+               <font>
+                  <Font name="Javanese Text" size="13.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dpExo5" onAction="#dpExo5OnAction" promptText="dd/MM/yyyy" />
+            <Slider fx:id="sldExo5" majorTickUnit="5.0" max="20.0" prefHeight="37.0" prefWidth="167.0" showTickLabels="true" showTickMarks="true" />
+            <Spinner />
+            <TextField fx:id="txtExo5" />
+         </children>
+      </VBox>
+      <VBox layoutX="604.0" layoutY="343.0" prefHeight="201.0" prefWidth="160.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="70.0" text="Exercice 6">
+               <font>
+                  <Font name="Javanese Text" size="13.0" />
+               </font>
+            </Label>
+            <ColorPicker fx:id="cpExo6" onAction="#cpExo6OnAction" prefHeight="30.0" prefWidth="162.0" />
+            <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="133.0" stroke="BLACK" strokeType="INSIDE" width="162.0" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
