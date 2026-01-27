@@ -49,6 +49,10 @@ public class TP2Controller implements Initializable {
     private Rectangle rectangle;
     @FXML
     private ColorPicker cpExo6;
+    @FXML
+    private ListView lvExo7;
+    @FXML
+    private TextField txtExo7;
 
 
     @Override
@@ -58,6 +62,8 @@ public class TP2Controller implements Initializable {
         ToggleGroup toggleGroup = new ToggleGroup();
         rbSio1.setToggleGroup(toggleGroup);
         rbSio2.setToggleGroup(toggleGroup);
+
+        lvExo7.setItems(FXCollections.observableArrayList("Espagne","France","Allemagne","Cote d'Ivoire"));
 
     }
 
@@ -150,5 +156,11 @@ public class TP2Controller implements Initializable {
     public void cpExo6OnAction(ActionEvent actionEvent)
     {
 
+    }
+
+    @FXML
+    public void lvExo7OnClicked(Event event)
+    {
+        txtExo7.setText(lvExo7.getSelectionModel().getSelectedItem().toString());
     }
 }

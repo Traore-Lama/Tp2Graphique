@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
@@ -16,11 +17,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2graphique.TP2Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="767.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2graphique.TP2Controller">
    <children>
-      <HBox prefHeight="108.0" prefWidth="807.0" style="-fx-background-color: purple;">
+      <HBox prefHeight="125.0" prefWidth="855.0" style="-fx-background-color: purple;">
          <children>
-            <Label alignment="TOP_CENTER" prefHeight="105.0" prefWidth="738.0" text="TP2 : Les Controles Graphiques" textFill="WHITE">
+            <Label alignment="CENTER" prefHeight="134.0" prefWidth="866.0" text="TP2 : Les Controles Graphiques" textFill="WHITE">
                <font>
                   <Font name="Javanese Text" size="30.0" />
                </font>
@@ -123,6 +124,17 @@
             </Label>
             <ColorPicker fx:id="cpExo6" onAction="#cpExo6OnAction" prefHeight="30.0" prefWidth="162.0" />
             <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="133.0" stroke="BLACK" strokeType="INSIDE" width="162.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="45.0" layoutY="545.0" prefHeight="201.0" prefWidth="160.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="70.0" text="Exercice 7">
+               <font>
+                  <Font name="Javanese Text" size="13.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lvExo7" onMouseClicked="#lvExo7OnClicked" prefHeight="94.0" prefWidth="151.0" />
+            <TextField fx:id="txtExo7" />
          </children>
       </VBox>
    </children>
