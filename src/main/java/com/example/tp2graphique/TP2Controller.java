@@ -191,11 +191,12 @@ public class TP2Controller implements Initializable {
     @FXML
     public void tvExo8OnClicked(Event event)
     {
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Erreur de saisie");
         alert.setContentText(
                  tcNomPays.getText() + " - " + tcNbHabitants.getText() + " - " + tcCapitale.getText()
         );
-        alert.show();
+        alert.showAndWait();
     }
 }
