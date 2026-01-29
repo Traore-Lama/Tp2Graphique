@@ -1,6 +1,8 @@
 package com.example.tp2graphique;
 
 import com.example.tp2graphique.Models.Pays;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -13,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Rectangle;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class TP2Controller implements Initializable {
@@ -63,6 +66,8 @@ public class TP2Controller implements Initializable {
     private TableColumn tcCapitale;
     @FXML
     private TableColumn tcNbHabitants;
+    @FXML
+    private Spinner spExo5;
 
 
     @Override
@@ -89,6 +94,16 @@ public class TP2Controller implements Initializable {
         // Ajout des objet a leur colones
         tvExo8.setItems(FXCollections.observableArrayList(espagne,france,allemagne,civ));
 
+        sldExo5.valueProperty().addListener(new ChangeListener<Number>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1)
+            {
+                txtExo5.setText(String.valueOf(t1.intValue()));
+            }
+        });
+
+        spExo5.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0,20,5,1));
     }
 
     @FXML
@@ -157,23 +172,28 @@ public class TP2Controller implements Initializable {
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur de saisie");
-            alert.setHeaderText(null);
             alert.setContentText("Veuillez choisir un style de musique");
-            alert.showAndWait();
+            alert.show();
         } else
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Résultat");
-            alert.setHeaderText(null);
             alert.setContentText("Vos goûts musicaux sont : " + result);
-            alert.showAndWait();
+            alert.show();
         }
     }
 
     @FXML
     public void dpExo5OnAction(ActionEvent actionEvent)
     {
-        txtExo5.setText(dpExo5.getValue().toString());
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        txtExo5.setText(dtf.format(dpExo5.getValue()));
+    }
+
+    @FXML
+    public void spExo5OnClicked(Event event)
+    {
+        txtExo5.setText(String.valueOf(sldExo5.getValue())); // Fonctionne pas
     }
 
     @FXML
@@ -197,6 +217,6 @@ public class TP2Controller implements Initializable {
         alert.setContentText(
                  tcNomPays.getText() + " - " + tcNbHabitants.getText() + " - " + tcCapitale.getText()
         );
-        alert.showAndWait();
+        alert.show();
     }
 }

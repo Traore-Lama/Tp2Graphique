@@ -113,7 +113,7 @@
             </Label>
             <DatePicker fx:id="dpExo5" onAction="#dpExo5OnAction" promptText="dd/MM/yyyy" />
             <Slider fx:id="sldExo5" majorTickUnit="5.0" max="20.0" prefHeight="37.0" prefWidth="167.0" showTickLabels="true" showTickMarks="true" />
-            <Spinner />
+            <Spinner fx:id="spExo5" onMouseClicked="#spExo5OnClicked" prefHeight="26.0" prefWidth="163.0" />
             <TextField fx:id="txtExo5" />
          </children>
       </VBox>
