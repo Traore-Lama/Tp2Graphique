@@ -193,6 +193,9 @@ public class TP2Controller implements Initializable {
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Erreur de saisie");
+        alert.setContentText(
+                 tcNomPays.getText() + " - " + tcNbHabitants.getText() + " - " + tcCapitale.getText()
+        );
         alert.show();
     }
 }
