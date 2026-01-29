@@ -1,5 +1,6 @@
 package com.example.tp2graphique;
 
+import com.example.tp2graphique.Models.Pays;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -9,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Rectangle;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -53,6 +55,14 @@ public class TP2Controller implements Initializable {
     private ListView lvExo7;
     @FXML
     private TextField txtExo7;
+    @FXML
+    private TableView tvExo8;
+    @FXML
+    private TableColumn tcNomPays;
+    @FXML
+    private TableColumn tcCapitale;
+    @FXML
+    private TableColumn tcNbHabitants;
 
 
     @Override
@@ -64,6 +74,20 @@ public class TP2Controller implements Initializable {
         rbSio2.setToggleGroup(toggleGroup);
 
         lvExo7.setItems(FXCollections.observableArrayList("Espagne","France","Allemagne","Cote d'Ivoire"));
+
+        // Creation d'objet de class Pays avc les attributs
+        Pays espagne = new Pays("Espagne",47059533,"Madrid");
+        Pays france = new Pays("France",68606000,"Paris");
+        Pays allemagne = new Pays("Allemagne",83360000,"Berlin");
+        Pays civ = new Pays("Cote d'Ivoire",93608020,"Abidjan");
+
+        // Les colones du TableView
+        tcNomPays.setCellValueFactory(new PropertyValueFactory<>("nomPays"));
+        tcNbHabitants.setCellValueFactory(new PropertyValueFactory<>("nbHabitants"));
+        tcCapitale.setCellValueFactory(new PropertyValueFactory<>("nomCapitale"));
+
+        // Ajout des objet a leur colones
+        tvExo8.setItems(FXCollections.observableArrayList(espagne,france,allemagne,civ));
 
     }
 
@@ -162,5 +186,13 @@ public class TP2Controller implements Initializable {
     public void lvExo7OnClicked(Event event)
     {
         txtExo7.setText(lvExo7.getSelectionModel().getSelectedItem().toString());
+    }
+
+    @FXML
+    public void tvExo8OnClicked(Event event)
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Erreur de saisie");
+        alert.show();
     }
 }

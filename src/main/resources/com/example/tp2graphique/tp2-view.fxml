@@ -10,6 +10,8 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -137,5 +139,24 @@
             <TextField fx:id="txtExo7" />
          </children>
       </VBox>
+      <VBox layoutX="307.0" layoutY="582.0" prefHeight="126.0" prefWidth="331.0">
+         <children>
+            <TableView fx:id="tvExo8" onMouseClicked="#tvExo8OnClicked" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="tcNomPays" prefWidth="75.0" text="Nom Pays" />
+                <TableColumn fx:id="tcNbHabitants" prefWidth="75.0" text="Nb Habitants" />
+                  <TableColumn fx:id="tcCapitale" prefWidth="75.0" text="Capitale" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+      <Label layoutX="307.0" layoutY="545.0" prefHeight="19.0" prefWidth="70.0" text="Exercice 8">
+         <font>
+            <Font name="Javanese Text" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
