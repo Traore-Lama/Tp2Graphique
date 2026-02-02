@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ColorPicker?>
@@ -61,12 +62,12 @@
                </font>
             </Label>
             <Label alignment="TOP_RIGHT" prefHeight="11.0" prefWidth="103.0" text="Quelle Classe ?" />
-            <RadioButton fx:id="rbSio1" mnemonicParsing="false" onMouseClicked="#rbSio1OnClicked" text="SIO1">
+            <RadioButton fx:id="rbSio1" mnemonicParsing="false" onMouseClicked="#rbSioOnClicked" text="SIO1">
                <font>
                   <Font name="Javanese Text" size="12.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="rbSio2" mnemonicParsing="false" onMouseClicked="#rbSio2OnClicked" text="SIO2">
+            <RadioButton fx:id="rbSio2" mnemonicParsing="false" onMouseClicked="#rbSio1OnClicked" text="SIO2">
                <font>
                   <Font name="Javanese Text" size="12.0" />
                </font>
@@ -112,9 +113,15 @@
                </font>
             </Label>
             <DatePicker fx:id="dpExo5" onAction="#dpExo5OnAction" promptText="dd/MM/yyyy" />
-            <Slider fx:id="sldExo5" majorTickUnit="5.0" max="20.0" prefHeight="37.0" prefWidth="167.0" showTickLabels="true" showTickMarks="true" />
-            <Spinner fx:id="spExo5" onMouseClicked="#spExo5OnClicked" prefHeight="26.0" prefWidth="163.0" />
-            <TextField fx:id="txtExo5" />
+            <Slider fx:id="sldExo5" majorTickUnit="5.0" max="20.0" minorTickCount="4" prefHeight="37.0" prefWidth="167.0" showTickLabels="true" showTickMarks="true" />
+            <Spinner fx:id="spExo5" onMouseClicked="#spExo5OnClicked" prefHeight="26.0" prefWidth="163.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Spinner>
+            <TextField fx:id="txtExo5">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TextField>
          </children>
       </VBox>
       <VBox layoutX="604.0" layoutY="343.0" prefHeight="201.0" prefWidth="160.0">

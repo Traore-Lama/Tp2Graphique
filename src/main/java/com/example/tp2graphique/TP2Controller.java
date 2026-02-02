@@ -113,6 +113,7 @@ public class TP2Controller implements Initializable {
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur de Saisie");
+            alert.setHeaderText(null);
             alert.setContentText("Veuillez saisir le contenu");
             alert.show();
         }
@@ -125,26 +126,28 @@ public class TP2Controller implements Initializable {
     @FXML
     public void cboExo2OnAction(ActionEvent actionEvent)
     {
-        txtExo2.setText(cboExo2.getSelectionModel().getSelectedItem().toString());
+        txtExo2.setText(cboExo2.getValue().toString());
     }
 
     @FXML
-    public void rbSio1OnClicked(Event event)
+    public void rbSioOnClicked(Event event)
     {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Erreur de Saisie");
-        alert.setContentText("Vous avez cliquer sur SIO1");
-        alert.show();
+        if (rbSio1.isSelected())
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur de Saisie");
+            alert.setContentText("Vous avez cliquer sur SIO1");
+            alert.show();
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur de Saisie");
+            alert.setContentText("Vous avez cliquer sur SIO2");
+            alert.show();
+        }
     }
 
-    @FXML
-    public void rbSio2OnClicked(Event event)
-    {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Erreur de Saisie");
-        alert.setContentText("Saisir du contenu sur SIO2");
-        alert.show();
-    }
 
     @FXML
     public void btnExo4OnClicked(Event event)
@@ -208,15 +211,25 @@ public class TP2Controller implements Initializable {
         txtExo7.setText(lvExo7.getSelectionModel().getSelectedItem().toString());
     }
 
-    @FXML
     public void tvExo8OnClicked(Event event)
     {
+        Pays selectedPays = tvExo8.getSelectionModel().getSelectedItem();
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Erreur de saisie");
-        alert.setContentText(
-                 tcNomPays.getText() + " - " + tcNbHabitants.getText() + " - " + tcCapitale.getText()
-        );
-        alert.show();
+        if (selectedPays != null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Pays");
+            alert.setContentText(
+                    selectedPays.getNomPays()
+                            + " - " + selectedPays.getNbHabitants()
+                            + " - " + selectedPays.getNomCapitale()
+            );
+            alert.show();
+        } else {
+            // Optionnel : afficher un message si aucune ligne n'est sélectionnée
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Attention");
+            alert.setContentText("Veuillez cliquer sur une ligne du tableau");
+            alert.show();
+        }
     }
 }
