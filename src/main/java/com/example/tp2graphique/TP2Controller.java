@@ -59,15 +59,16 @@ public class TP2Controller implements Initializable {
     @FXML
     private TextField txtExo7;
     @FXML
-    private TableView tvExo8;
+    private TableView<Pays> tvExo8;
     @FXML
-    private TableColumn tcNomPays;
+    private TableColumn<Pays, String> tcNomPays;
     @FXML
-    private TableColumn tcCapitale;
+    private TableColumn<Pays, String> tcCapitale;
     @FXML
-    private TableColumn tcNbHabitants;
+    private TableColumn<Pays, Integer> tcNbHabitants;
     @FXML
     private Spinner spExo5;
+
 
 
     @Override
@@ -202,7 +203,7 @@ public class TP2Controller implements Initializable {
     @FXML
     public void cpExo6OnAction(ActionEvent actionEvent)
     {
-
+        rectangle.setFill(cpExo6.getValue());
     }
 
     @FXML

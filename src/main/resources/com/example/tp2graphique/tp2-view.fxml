@@ -67,7 +67,7 @@
                   <Font name="Javanese Text" size="12.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="rbSio2" mnemonicParsing="false" onMouseClicked="#rbSio1OnClicked" text="SIO2">
+            <RadioButton fx:id="rbSio2" mnemonicParsing="false" onMouseClicked="#rbSioOnClicked" text="SIO2">
                <font>
                   <Font name="Javanese Text" size="12.0" />
                </font>
