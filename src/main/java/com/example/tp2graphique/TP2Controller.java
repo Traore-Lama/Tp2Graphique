@@ -1,6 +1,6 @@
 package com.example.tp2graphique;
 
-import com.example.tp2graphique.Models.Pays;
+import com.example.tp2graphique.models.Pays;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -100,7 +100,7 @@ public class TP2Controller implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1)
             {
-                txtExo5.setText(String.valueOf(t1.intValue()));
+                txtExo5.setText(String.valueOf((t1.intValue())));
             }
         });
 

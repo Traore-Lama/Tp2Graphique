@@ -1,4 +1,4 @@
-package com.example.tp2graphique.Models;
+package com.example.tp2graphique.models;
 
 public class Pays
 {
